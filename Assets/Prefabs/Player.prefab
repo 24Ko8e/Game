@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7538461435935180656}
-  force: 1800
-  maxspeed: 2
+  force: 1730
+  maxspeed: 4
   deathparticles: {fileID: 2255467106686654802, guid: f46786a1cfdf59042a884f25eb2608af,
     type: 3}
   alive: 1

@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - DestroyParticle
     - Enemy
     - GameManager
+    - MusicManager
     - PlayerMovement
     - UI
     Unity.TextMeshPro.dll:
@@ -169,6 +170,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -203,6 +208,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11376}
     - Class: 114
       Script: {instanceID: 11420}
+    - Class: 114
+      Script: {instanceID: 15190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -676,6 +683,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MusicManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

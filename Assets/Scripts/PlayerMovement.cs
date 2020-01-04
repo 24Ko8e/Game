@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 playerspawn;
 
+    int i = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDied()
     {
-        if (alive)
+        if (i==1)
         {
+            i += 1;
             alive = false;
             Instantiate(deathparticles, transform.position, Quaternion.Euler(-90, 0, 0));
             Invoke("resetposition", 1f);
@@ -81,5 +83,6 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position = new Vector3(playerspawn.x, playerspawn.y + 0.45f, playerspawn.z);
         alive = true;
+        i-= 1;
     }
 }

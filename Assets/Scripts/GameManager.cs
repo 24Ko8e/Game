@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static int currentlevel = 1;
     public static int levelsunlocked;
 
-    private void Start()
+    void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
