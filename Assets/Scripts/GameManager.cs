@@ -8,17 +8,26 @@ public class GameManager : MonoBehaviour
     public static int currentscore;
     public static int highscore;
 
-    public static int currentlevel = 1;
+    public static int currentlevel;
     public static int levelsunlocked;
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        currentlevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        levelsunlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
+        Debug.Log(currentlevel);
+        Debug.Log(levelsunlocked);
     }
 
     public static void CompleteLevel()
     {
-        SceneManager.LoadScene(currentlevel + 1);
-        currentlevel+=1;
+        levelsunlocked += 1;
+        PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
+        currentlevel += 1;
+        SceneManager.LoadScene(currentlevel);
+        PlayerPrefs.SetInt("CurrentLevel", currentlevel);     
+
+        PlayerPrefs.Save();
     }
 }

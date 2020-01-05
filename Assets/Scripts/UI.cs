@@ -7,6 +7,12 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
+    public GameObject play;
+    public GameObject resume;
+
+    public Animation mainmenuout;
+    public Animation Optionsin;
+
     public AudioMixer audiomixer;
 
     public Slider musicSlider;
@@ -18,22 +24,58 @@ public class UI : MonoBehaviour
     public float soundVolume;
     private void Start()
     {
+        if (PlayerPrefs.GetInt("LevelsUnlocked", 1) == 1)
+        {
+            play.SetActive(true);
+            resume.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("LevelsUnlocked", 1) > 1)
+        {
+            play.SetActive(false);
+            resume.SetActive(true);
+        }
+
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
 
-        /*if (musicSlider.value > 0.0001)
-        {
-            setVolumeMtoggle(true);
-        }
-        else
-            setVolumeMtoggle(false);*/
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().MenuMusic();
 
     }
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        audiomixer.SetFloat("MusicVolume",-80);
+        SceneManager.LoadScene(GameManager.currentlevel);
+    }
+
+    public void Resume()
+    {
+        audiomixer.SetFloat("MusicVolume", -80);
+        SceneManager.LoadScene(GameManager.currentlevel);
+    }
+
+    public void Options()
+    {
+        StartCoroutine(ops());
+    }
+    IEnumerator ops()
+    {
+        mainmenuout.PlayQueued("MainMenuOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(mainmenuout.GetClip("MainMenuOut").length);
+        Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
+    }
+
+    public void OptionsBack()
+    {
+        StartCoroutine(opsback());
+    }
+    IEnumerator opsback()
+    {
+        Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);   
+        mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
     }
 
     public void Quit()
@@ -47,54 +89,18 @@ public class UI : MonoBehaviour
         audiomixer.SetFloat("MusicVolume", Mathf.Log10 (volume) * 20);
         musicVolume = volume;
     }
-    /*public void setVolumeMtoggle(bool state)
-    {
-        if (state)
-        {
-            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
-        }
-        if (!state)
-        {
-            PlayerPrefs.SetFloat("MusicVolume", musicVolume);
-            musicSlider.value = 0.0001f;
-        }
-    }*/
 
     public void setVolumeIGM(float volume)
     {
         audiomixer.SetFloat("GameMusicVolume", Mathf.Log10(volume) * 20);
         gameMusicVolume = volume;
     }
-    /*public void setVolumeIGMtoggle(bool state)
-    {
-        if (state)
-        {
-            gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
-        }
-        if (!state)
-        {
-            PlayerPrefs.SetFloat("GameMusicVolume", gameMusicVolume);
-            gameMusicSlider.value = 0.0001f;
-        }
-    }*/
 
     public void setVolumeS(float volume)
     {
         audiomixer.SetFloat("SoundVolume", Mathf.Log10(volume) * 20);
         soundVolume = volume;
     }
-    /*public void setVolumeStoggle(bool state)
-    {
-        if (state)
-        {
-            soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
-        }
-        if (!state)
-        {
-            PlayerPrefs.SetFloat("SoundVolume", soundVolume);
-            soundSlider.value = 0.0001f;
-        }
-    }*/
 
     private void OnDisable()
     {

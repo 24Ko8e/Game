@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerspawn;
 
     int i = 1;
+    bool nxtLVL = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +53,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Goal")
+        if(other.transform.tag == "Goal" && nxtLVL == true)
         {
             GameManager.CompleteLevel();
+            nxtLVL = false;
         }
         if(other.transform.tag == "Enemy")
         {
