@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     {
         yield return null;
 
-        for (int i = Random.Range(0, 3); i < MainMenuMusic.Length; i++)
+        for (int i = Random.Range(0, MainMenuMusic.Length); i < MainMenuMusic.Length; i++)
         {
             MainMenuMusicSource.clip = MainMenuMusic[i];
             MainMenuMusicSource.Play();
@@ -51,6 +51,32 @@ public class AudioManager : MonoBehaviour
             }
 
             if (i == MainMenuMusic.Length-1)
+                i = -1;
+        }
+    }
+
+    public void InGameMusic()
+    {
+        StartCoroutine(playIGMusic());
+    }
+
+    public IEnumerator playIGMusic()
+    {
+        yield return null;
+
+        for (int i = Random.Range(0, Ingamemusic.Length); i < Ingamemusic.Length; i++)
+        {
+            IngamemusicSource.clip = Ingamemusic[i];
+            IngamemusicSource.Play();
+
+            Debug.Log(IngamemusicSource.clip.name);
+
+            while (IngamemusicSource.isPlaying)
+            {
+                yield return null;
+            }
+
+            if (i == Ingamemusic.Length - 1)
                 i = -1;
         }
     }

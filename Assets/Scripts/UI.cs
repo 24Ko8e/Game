@@ -48,12 +48,14 @@ public class UI : MonoBehaviour
     {
         audiomixer.SetFloat("MusicVolume",-80);
         SceneManager.LoadScene(GameManager.currentlevel);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
     }
 
     public void Resume()
     {
         audiomixer.SetFloat("MusicVolume", -80);
         SceneManager.LoadScene(GameManager.currentlevel);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
     }
 
     public void Options()
