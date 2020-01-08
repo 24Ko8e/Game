@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Goal" && nxtLVL == true)
+        if(other.transform.tag == "Goal" && nxtLVL == true && alive == true)
         {
             GameManager.CompleteLevel();
             nxtLVL = false;

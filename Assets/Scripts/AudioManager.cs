@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        IngamemusicSource.volume = 0;
     }
 
     // Update is called once per frame
@@ -55,9 +56,29 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void InGameMusic()
+    public void InGameMusicStart()
     {
         StartCoroutine(playIGMusic());
+        igmfadein();
+    }
+
+    public void igmfadein()
+    {
+        StartCoroutine(IGMusicFadeIn());
+    }
+
+    IEnumerator IGMusicFadeIn()
+    {
+        float time = 1.8f;
+        float j = 0;
+        float rate = 1 / time;
+
+        while (j < 1)
+        {
+            IngamemusicSource.volume = j;
+            j += Time.deltaTime * rate;
+            yield return 0;
+        }
     }
 
     public IEnumerator playIGMusic()
@@ -80,4 +101,6 @@ public class AudioManager : MonoBehaviour
                 i = -1;
         }
     }
+
+    
 }

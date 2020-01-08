@@ -17,7 +17,7 @@ public class FPScounter : MonoBehaviour
         if (Time.unscaledTime > _timer)
         {
             int fps = (int)(1f / Time.unscaledDeltaTime);
-            _fpsText.text = fps + "FPS: ";
+            _fpsText.text = fps + " FPS";
             _timer = Time.unscaledTime + _hudRefreshRate;
         }
     }

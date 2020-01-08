@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
 
     public Animation mainmenuout;
     public Animation Optionsin;
+    public Animation AudioOptionsin;
 
     public AudioMixer audiomixer;
 
@@ -46,16 +47,35 @@ public class UI : MonoBehaviour
 
     public void Play()
     {
-        audiomixer.SetFloat("MusicVolume",-80);
-        SceneManager.LoadScene(GameManager.currentlevel);
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
+        //audiomixer.SetFloat("MusicVolume",-80);
+
+        StartCoroutine(OnResumeClick());
     }
 
     public void Resume()
     {
-        audiomixer.SetFloat("MusicVolume", -80);
+        //audiomixer.SetFloat("MusicVolume", -80);
+        //SceneManager.LoadScene(GameManager.currentlevel);
+        //GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
+
+        StartCoroutine(OnResumeClick());
+    }
+    public IEnumerator OnResumeClick()
+    {
+        float time = 1.2f;
+        float i = 1;
+        float rate = 1 / time;
+
+        mainmenuout.Play();
+
+        while (i > 0)
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().MainMenuMusicSource.volume = i;
+            i -= Time.deltaTime * rate;
+            yield return 0;
+        }
         SceneManager.LoadScene(GameManager.currentlevel);
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusicStart();
     }
 
     public void Options()
@@ -78,6 +98,29 @@ public class UI : MonoBehaviour
         Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
         yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);   
         mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
+    }
+
+    public void OnAudioClick()
+    {
+        StartCoroutine(Audio());
+    }
+
+    IEnumerator Audio()
+    {
+        Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);
+        AudioOptionsin.PlayQueued("AudioOptionsIn", QueueMode.PlayNow);
+    }
+    public void AudioBack()
+    {
+        StartCoroutine(AudioBackClick());
+    }
+
+    IEnumerator AudioBackClick()
+    {
+        AudioOptionsin.PlayQueued("AudioOptionsOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(AudioOptionsin.GetClip("AudioOptionsOut").length);
+        Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
     }
 
     public void Quit()
