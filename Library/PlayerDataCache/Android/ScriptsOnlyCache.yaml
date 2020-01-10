@@ -23,10 +23,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Levels/Level_1.unity:
     - Class: 1
@@ -176,11 +181,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9844}
     - Class: 114
+      Script: {instanceID: 9846}
+    - Class: 114
       Script: {instanceID: 9884}
+    - Class: 114
+      Script: {instanceID: 10170}
     - Class: 114
       Script: {instanceID: 10254}
     - Class: 114
       Script: {instanceID: 10274}
+    - Class: 114
+      Script: {instanceID: 10420}
     - Class: 114
       Script: {instanceID: 10592}
     - Class: 114
@@ -200,7 +211,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11192}
     - Class: 114
+      Script: {instanceID: 11376}
+    - Class: 114
       Script: {instanceID: 11386}
+    - Class: 114
+      Script: {instanceID: 11400}
     - Class: 114
       Script: {instanceID: 11418}
     - Class: 114
@@ -588,7 +603,7 @@ ScriptsOnlyBuild:
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: 792100a09c5f07d81d3e495631f537a6
+      Hash: bde2eea93cef65d6ddf22cd20e889f48
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI

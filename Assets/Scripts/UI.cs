@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -13,12 +14,18 @@ public class UI : MonoBehaviour
     public Animation mainmenuout;
     public Animation Optionsin;
     public Animation AudioOptionsin;
+    public Animation GraphicsIn;
 
     public AudioMixer audiomixer;
 
     public Slider musicSlider;
     public Slider gameMusicSlider;
     public Slider soundSlider;
+
+    public Dropdown graphics;
+    public Toggle fpstoggle;
+
+    public GameObject fpstxt;
 
     public float musicVolume;
     public float gameMusicVolume;
@@ -40,6 +47,9 @@ public class UI : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
+
+        graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 0);
+        fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
 
         GameObject.Find("AudioManager").GetComponent<AudioManager>().MenuMusic();
 
@@ -123,6 +133,28 @@ public class UI : MonoBehaviour
         Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
     }
 
+    public void OnGraphicsClick()
+    {
+        StartCoroutine(graphicsclick());
+    }
+    IEnumerator graphicsclick()
+    {
+        Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);
+        GraphicsIn.PlayQueued("GraphicsIn", QueueMode.PlayNow);
+    }
+
+    public void OnGraphicsBack()
+    {
+        StartCoroutine(graphics_back());
+    }
+    IEnumerator graphics_back()
+    {
+        GraphicsIn.PlayQueued("GraphicsOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(GraphicsIn.GetClip("GraphicsOut").length);
+        Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
+    }
+
     public void Quit()
     {
         Application.Quit();
@@ -145,6 +177,20 @@ public class UI : MonoBehaviour
     {
         audiomixer.SetFloat("SoundVolume", Mathf.Log10(volume) * 20);
         soundVolume = volume;
+    }
+
+    public void setQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
+        PlayerPrefs.SetInt("GraphicsSettings", index);
+        //PlayerPrefs.Save();
+    }
+
+    public void FPScounterToggle(bool state)
+    {
+        fpstxt.SetActive(state);
+        PlayerPrefs.SetInt("fpscounter", Convert.ToInt32(state));
+        //PlayerPrefs.Save();
     }
 
     private void OnDisable()
