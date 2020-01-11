@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] MainMenuMusic;
     public AudioClip[] Ingamemusic;
 
+    public bool isIGMplaying = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -58,8 +60,12 @@ public class AudioManager : MonoBehaviour
 
     public void InGameMusicStart()
     {
-        StartCoroutine(playIGMusic());
-        igmfadein();
+        if (!isIGMplaying)
+        {
+            StartCoroutine(playIGMusic());
+            igmfadein();
+            isIGMplaying = true;
+        }
     }
 
     public void igmfadein()
@@ -102,5 +108,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void menuFadeOut()
+    {
+        StartCoroutine(menufadeout());
+    }
+
+    IEnumerator menufadeout()
+    {
+        float time = 1.2f;
+        float i = 1;
+        float rate = 1 / time;
+
+        while (i > 0)
+        {
+            MainMenuMusicSource.volume = i;
+            i -= Time.deltaTime * rate;
+            yield return 0;
+        }
+
+        InGameMusicStart();
+    }
     
 }

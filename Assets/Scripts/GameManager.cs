@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
         currentlevel += 1;
         PlayerPrefs.SetInt("CurrentLevel", currentlevel);
-        SceneManager.LoadScene(currentlevel);
-
         PlayerPrefs.Save();
+
+        SceneManager.LoadScene("LoadingScene");
     }
 }

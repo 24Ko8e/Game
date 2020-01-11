@@ -597,13 +597,13 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 9c176be644db41139368be450675a44e
+      Hash: cd498772de9185bdb35b885960c1cdd7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: bde2eea93cef65d6ddf22cd20e889f48
+      Hash: 92e4430432e36fd0d49c08cea04c3cb9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI

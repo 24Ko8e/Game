@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     public GameObject play;
-    public GameObject resume;
 
     public Animation mainmenuout;
     public Animation Optionsin;
@@ -32,17 +31,6 @@ public class UI : MonoBehaviour
     public float soundVolume;
     private void Start()
     {
-        if (PlayerPrefs.GetInt("LevelsUnlocked", 1) == 1)
-        {
-            play.SetActive(true);
-            resume.SetActive(false);
-        }
-
-        if (PlayerPrefs.GetInt("LevelsUnlocked", 1) > 1)
-        {
-            play.SetActive(false);
-            resume.SetActive(true);
-        }
 
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
@@ -57,35 +45,8 @@ public class UI : MonoBehaviour
 
     public void Play()
     {
-        //audiomixer.SetFloat("MusicVolume",-80);
-
-        StartCoroutine(OnResumeClick());
-    }
-
-    public void Resume()
-    {
-        //audiomixer.SetFloat("MusicVolume", -80);
-        //SceneManager.LoadScene(GameManager.currentlevel);
-        //GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusic();
-
-        StartCoroutine(OnResumeClick());
-    }
-    public IEnumerator OnResumeClick()
-    {
-        float time = 1.2f;
-        float i = 1;
-        float rate = 1 / time;
-
-        mainmenuout.Play();
-
-        while (i > 0)
-        {
-            GameObject.Find("AudioManager").GetComponent<AudioManager>().MainMenuMusicSource.volume = i;
-            i -= Time.deltaTime * rate;
-            yield return 0;
-        }
-        SceneManager.LoadScene(GameManager.currentlevel);
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusicStart();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().menuFadeOut();
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void Options()
