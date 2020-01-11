@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6007939378160651580}
   - component: {fileID: 6007939378159652860}
   - component: {fileID: 6007939377424183122}
+  - component: {fileID: 5520465622685595730}
   m_Layer: 0
   m_Name: ShockWave_mesh
   m_TagString: Untagged
@@ -103,3 +104,19 @@ MonoBehaviour:
   endScale: {x: 1, y: 4, z: 1}
   scaleSpeed: 0.5
   scaleRate: 1
+--- !u!111 &5520465622685595730
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007939378161848636}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: fa947dfc20c1d83419465bf338a61a30, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: fa947dfc20c1d83419465bf338a61a30, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

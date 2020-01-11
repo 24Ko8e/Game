@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010412949844}
   - component: {fileID: 23000013503467608}
   - component: {fileID: 114000013971332034}
+  - component: {fileID: 9164694968205150863}
   m_Layer: 0
   m_Name: SoftStar
   m_TagString: Star
@@ -103,3 +104,16 @@ MonoBehaviour:
   endScale: {x: 0.35, y: 0.35, z: 0.35}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!65 &9164694968205150863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010986879176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3472722, y: 0.44943982, z: 2.2323895}
+  m_Center: {x: -0.00000023841856, y: -0.000417769, z: 0.11784126}

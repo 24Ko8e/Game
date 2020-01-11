@@ -36,7 +36,7 @@ public class UI : MonoBehaviour
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
 
-        graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 0);
+        graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 2);
         fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
 
         GameObject.Find("AudioManager").GetComponent<AudioManager>().MenuMusic();
