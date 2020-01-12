@@ -22,7 +22,7 @@ public class Star : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Player" && GetComponent<PlayerMovement>().alive == true)
+        if(other.transform.tag == "Player" && GameObject.Find("Player").GetComponent<PlayerMovement>().alive == true)
         {
             transform.localScale = new Vector3(0,0,0);
             sw.GetComponent<AnimationScript>().enabled = false;
@@ -38,6 +38,7 @@ public class Star : MonoBehaviour
         {
             yield return null;
         }
+        collected = true;
         gameObject.SetActive(false);
         sw.SetActive(false);
     }
