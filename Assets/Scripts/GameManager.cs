@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public static void CompleteLevel()
     {
+        GameObject.Find("LevelManager").GetComponent <LevelManager > ().SaveGame();
         levelsunlocked += 1;
         PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
         currentlevel += 1;

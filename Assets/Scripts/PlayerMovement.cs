@@ -84,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     void resetposition()
     {
+        GameObject.Find("LevelManager").GetComponent<LevelManager>().ResetStars();
         transform.position = new Vector3(playerspawn.x, playerspawn.y + 0.45f, playerspawn.z);
         alive = true;
         i-= 1;

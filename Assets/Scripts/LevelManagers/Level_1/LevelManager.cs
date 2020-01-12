@@ -12,13 +12,24 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadGame();
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+
+    public void ResetStars()
+    {
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i].SetActive(true);
+            stars[i].GetComponent<AnimationScript>().enabled = true;
+            sw[i].SetActive(true);
+            sw[i].GetComponent<AnimationScript>().enabled = true;
+        }
     }
 
     private Save CreateSaveGameObject()
