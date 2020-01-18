@@ -66,9 +66,8 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDied()
     {
-        if (i==1)
+        while(alive)
         {
-            i += 1;
             alive = false;
             Instantiate(deathparticles, transform.position, Quaternion.Euler(-90, 0, 0));
             Invoke("resetposition", 1f);

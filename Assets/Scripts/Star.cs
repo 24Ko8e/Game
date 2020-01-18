@@ -17,7 +17,7 @@ public class Star : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +27,7 @@ public class Star : MonoBehaviour
             transform.localScale = new Vector3(0,0,0);
             sw.GetComponent<AnimationScript>().enabled = false;
             GetComponent<AnimationScript>().enabled = false;
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().levelStars += 1;
             StartCoroutine(OnCollected());           
         }
     }

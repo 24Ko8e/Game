@@ -14,17 +14,36 @@ public class AudioManager : MonoBehaviour
 
     public bool isIGMplaying = false;
 
+    public bool menu = true;
+    public bool game = false;
+
     // Start is called before the first frame update
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
         IngamemusicSource.volume = 0;
+        MenuMusic();
+
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+
+    public void Paused()
+    {
+        IngamemusicSource.volume *= 0.5f;
+    }
+
+    public void Resume()
+    {
+        IngamemusicSource.volume *= 2;
     }
 
     public void click()
@@ -35,6 +54,7 @@ public class AudioManager : MonoBehaviour
     public void MenuMusic()
     {
         StartCoroutine(playMenuclips());
+        menufadein();
     }
 
     public IEnumerator playMenuclips()
@@ -58,14 +78,33 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void menufadein()
+    {
+        StartCoroutine(MenuMusicFadeIn());
+    }
+    public IEnumerator MenuMusicFadeIn()
+    {
+        float time = 1.2f;
+        float i = 0;
+        float rate = 1 / time;
+
+        while ((i < 1)&& menu)
+        {
+            MainMenuMusicSource.volume = i;
+            i += Time.deltaTime * rate;
+            yield return 0;
+        }
+        MainMenuMusicSource.volume = 1;
+    }
+
     public void InGameMusicStart()
     {
         if (!isIGMplaying)
         {
             StartCoroutine(playIGMusic());
-            igmfadein();
             isIGMplaying = true;
         }
+        igmfadein();
     }
 
     public void igmfadein()
@@ -79,12 +118,13 @@ public class AudioManager : MonoBehaviour
         float j = 0;
         float rate = 1 / time;
 
-        while (j < 1)
+        while ((j < 1) && game)
         {
             IngamemusicSource.volume = j;
             j += Time.deltaTime * rate;
             yield return 0;
         }
+        IngamemusicSource.volume = 1;
     }
 
     public IEnumerator playIGMusic()
@@ -116,7 +156,7 @@ public class AudioManager : MonoBehaviour
     IEnumerator menufadeout()
     {
         float time = 1.2f;
-        float i = 1;
+        float i = MainMenuMusicSource.volume;
         float rate = 1 / time;
 
         while (i > 0)
@@ -125,8 +165,29 @@ public class AudioManager : MonoBehaviour
             i -= Time.deltaTime * rate;
             yield return 0;
         }
-
+        MainMenuMusicSource.volume = 0;
         InGameMusicStart();
     }
-    
+
+
+    public void igmfadeout()
+    {
+        StartCoroutine(IGMusicFadeOut());
+    }
+
+    IEnumerator IGMusicFadeOut()
+    {
+        float time = 1.8f;
+        float j = IngamemusicSource.volume;
+        float rate = 1 / time;
+
+        while (j > 0)
+        {
+            IngamemusicSource.volume = j;
+            j -= Time.deltaTime * rate;
+            yield return 0;
+        }
+        IngamemusicSource.volume = 0;
+        menufadein();
+    }
 }

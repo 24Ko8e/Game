@@ -5,21 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currentscore;
-    public static int highscore;
-
     public static int currentlevel;
     public static int levelsunlocked;
 
-    public static int stars = 0;
+    public static int totalStars = 0;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
         currentlevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         levelsunlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
-        Debug.Log(currentlevel);
-        Debug.Log(levelsunlocked);
+        totalStars = PlayerPrefs.GetInt("TotalStars", 0);
+        Debug.Log(totalStars + "stars");
     }
 
     public static void CompleteLevel()
@@ -27,8 +28,13 @@ public class GameManager : MonoBehaviour
         GameObject.Find("LevelManager").GetComponent <LevelManager > ().SaveGame();
         levelsunlocked += 1;
         PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
-        currentlevel += 1;
-        PlayerPrefs.SetInt("CurrentLevel", currentlevel);
+        if (currentlevel < levelsunlocked) 
+        {
+            currentlevel += 1;
+            PlayerPrefs.SetInt("CurrentLevel", currentlevel);
+        }
+        totalStars += GameObject.Find("LevelManager").GetComponent<LevelManager>().levelStars;
+        PlayerPrefs.SetInt("TotalStars", totalStars);
         PlayerPrefs.Save();
 
         SceneManager.LoadScene("LoadingScene");

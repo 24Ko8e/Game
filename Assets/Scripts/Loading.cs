@@ -9,6 +9,12 @@ public class Loading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(waitDelay());
+    }
+
+    IEnumerator waitDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
         StartCoroutine(LoadAsyncLevel());
     }
 

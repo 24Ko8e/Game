@@ -39,12 +39,13 @@ public class UI : MonoBehaviour
         graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 2);
         fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
 
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().MenuMusic();
 
     }
 
     public void Play()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().game = true;
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().menu = false;
         GameObject.Find("AudioManager").GetComponent<AudioManager>().menuFadeOut();
         SceneManager.LoadScene("LoadingScene");
     }

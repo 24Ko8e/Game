@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\LevelManagers\Level_1\LevelManager.cs" />
     <Compile Include="Assets\Scripts\LevelManagers\Save.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
+    <Compile Include="Assets\Scripts\LoadSelectedLevel.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Star.cs" />
     <Compile Include="Assets\Scripts\Trap.cs" />

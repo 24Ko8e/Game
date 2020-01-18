@@ -7,5 +7,4 @@ public class Save
 {
 
     public List<bool> StarState = new List<bool>();
-
 }
