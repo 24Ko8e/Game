@@ -27,7 +27,6 @@ public class Loading : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        GameObject.Find("HUD_Canvas").SetActive(true);
         //GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusicStart();
     }
 

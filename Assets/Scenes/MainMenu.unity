@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662867219}
+      - m_Target: {fileID: 435220166}
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
@@ -1811,6 +1811,17 @@ MonoBehaviour:
       - m_Target: {fileID: 320358601}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1832518140}
+        m_MethodName: click
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1962,7 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2448,6 +2459,7 @@ GameObject:
   - component: {fileID: 435220162}
   - component: {fileID: 435220161}
   - component: {fileID: 435220165}
+  - component: {fileID: 435220166}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: Untagged
@@ -2484,12 +2496,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 72
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2506,7 +2518,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -2528,7 +2540,7 @@ RectTransform:
   m_Children:
   - {fileID: 662867218}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2547,6 +2559,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652b57e856ecd4c45985c990b6f75633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &435220166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435220160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f09a5cedd5b2744b5cb5febd4f2001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 1832518137}
+  PauseMenuUI: {fileID: 936231511}
 --- !u!1 &445642777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3988,7 +4014,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662867218}
-  - component: {fileID: 662867219}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -4018,20 +4043,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &662867219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662867217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f09a5cedd5b2744b5cb5febd4f2001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 1832518137}
-  PauseMenuUI: {fileID: 936231511}
 --- !u!1 &680380319
 GameObject:
   m_ObjectHideFlags: 0
@@ -9566,7 +9577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10651,13 +10662,13 @@ MonoBehaviour:
   Optionsin: {fileID: 0}
   AudioOptionsin: {fileID: 0}
   GraphicsIn: {fileID: 0}
-  audiomixer: {fileID: 0}
-  musicSlider: {fileID: 0}
-  gameMusicSlider: {fileID: 0}
-  soundSlider: {fileID: 0}
-  graphics: {fileID: 0}
-  fpstoggle: {fileID: 0}
-  fpstxt: {fileID: 0}
+  audiomixer: {fileID: 24100000, guid: 89cbc214ae4346743824c28ebdd03cd8, type: 2}
+  musicSlider: {fileID: 651694722}
+  gameMusicSlider: {fileID: 1781760776}
+  soundSlider: {fileID: 1734446044}
+  graphics: {fileID: 1189200928}
+  fpstoggle: {fileID: 313180261}
+  fpstxt: {fileID: 1198736354}
   musicVolume: 0
   gameMusicVolume: 0
   soundVolume: 0
@@ -12248,7 +12259,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -12270,7 +12281,7 @@ RectTransform:
   m_Children:
   - {fileID: 1198736355}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15575,7 +15586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -15605,7 +15616,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662867219}
+      - m_Target: {fileID: 435220166}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -16006,7 +16017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -16036,7 +16047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662867219}
+      - m_Target: {fileID: 435220166}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
