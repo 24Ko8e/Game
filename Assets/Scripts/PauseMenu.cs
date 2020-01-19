@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
+    public GameObject audioManager;
 
     public GameObject PauseMenuUI;
     // Start is called before the first frame update
@@ -22,14 +23,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Resume();
+        audioManager.GetComponent<AudioManager>().Resume();
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
     public void Pause()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Paused();
+        audioManager.GetComponent<AudioManager>().Paused();
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -38,9 +39,9 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().menu = true;
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().game = false;
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().igmfadeout();
+        audioManager.GetComponent<AudioManager>().menu = true;
+        audioManager.GetComponent<AudioManager>().game = false;
+        audioManager.GetComponent<AudioManager>().igmfadeout();
         SceneManager.LoadScene(0);
     }
 }

@@ -8,14 +8,16 @@ public class GameManager : MonoBehaviour
     public static int currentlevel;
     public static int levelsunlocked;
 
-    public static int totalStars = 0;
+    public int totalStars = 0;
 
     void Awake()
     {
-        DontDestroyOnLoad(this);
-        if (FindObjectsOfType(GetType()).Length > 1)
+        DontDestroyOnLoad(gameObject);
+
+        if (GameObject.Find(gameObject.name)
+                  && GameObject.Find(gameObject.name) != this.gameObject)
         {
-            Destroy(gameObject);
+            Destroy(GameObject.Find(gameObject.name));
         }
         currentlevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         levelsunlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
@@ -23,11 +25,15 @@ public class GameManager : MonoBehaviour
         Debug.Log(totalStars + "stars");
     }
 
-    public static void CompleteLevel()
+    public void CompleteLevel()
     {
         GameObject.Find("LevelManager").GetComponent <LevelManager > ().SaveGame();
-        levelsunlocked += 1;
-        PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
+        if (currentlevel == levelsunlocked)
+        {
+            levelsunlocked += 1;
+            PlayerPrefs.SetInt("LevelsUnlocked", levelsunlocked);
+            Debug.Log(levelsunlocked + " Total levels unlocked");
+        }
         if (currentlevel < levelsunlocked) 
         {
             currentlevel += 1;

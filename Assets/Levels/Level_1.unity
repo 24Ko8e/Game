@@ -1982,6 +1982,7 @@ MonoBehaviour:
   - {fileID: 1666195587}
   - {fileID: 1087130835}
   state: 010101
+  levelStars: 0
   lvl1: 0
 --- !u!1 &916931464
 GameObject:
@@ -2416,6 +2417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f09a5cedd5b2744b5cb5febd4f2001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   PauseMenuUI: {fileID: 1621035557}
 --- !u!1001 &1250324828
 PrefabInstance:
@@ -3168,7 +3170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1888229227
 RectTransform:
   m_ObjectHideFlags: 0

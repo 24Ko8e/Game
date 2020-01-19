@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.transform.tag == "Goal" && nxtLVL == true && alive == true)
         {
-            GameManager.CompleteLevel();
+            GameObject.Find("GameManager").GetComponent<GameManager>().CompleteLevel();
             nxtLVL = false;
         }
         if(other.transform.tag == "Enemy")

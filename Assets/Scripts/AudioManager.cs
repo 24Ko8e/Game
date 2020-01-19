@@ -20,14 +20,17 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
+
+        if (GameObject.Find(gameObject.name)
+                  && GameObject.Find(gameObject.name) != this.gameObject)
+        {
+            Destroy(GameObject.Find(gameObject.name));
+        }
+
+
         IngamemusicSource.volume = 0;
         MenuMusic();
-
-        if (FindObjectsOfType(GetType()).Length > 1)
-        {
-            Destroy(gameObject);
-        }
     }
 
     // Update is called once per frame
@@ -38,12 +41,12 @@ public class AudioManager : MonoBehaviour
 
     public void Paused()
     {
-        IngamemusicSource.volume *= 0.5f;
+        IngamemusicSource.volume *= 0.4f;
     }
 
     public void Resume()
     {
-        IngamemusicSource.volume *= 2;
+        IngamemusicSource.volume *= 2.5f;
     }
 
     public void click()
