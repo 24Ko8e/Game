@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7916754830807326721}
   - component: {fileID: 8050591161920418022}
   - component: {fileID: 2640170329719899893}
-  - component: {fileID: 1770715534483752585}
+  - component: {fileID: 7057175788640981479}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,7 +132,7 @@ MonoBehaviour:
   deathparticles: {fileID: 2255467106686654802, guid: f46786a1cfdf59042a884f25eb2608af,
     type: 3}
   alive: 1
-  goalSound: {fileID: 1770715534483752585}
+  playerdeathSound: {fileID: 7057175788640981479}
 --- !u!135 &7916754830807326721
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!82 &1770715534483752585
+--- !u!82 &7057175788640981479
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,7 +278,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -138720260628992183, guid: 89cbc214ae4346743824c28ebdd03cd8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3f33676c236271a4d8aad3781ac1c4a3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af27795f4a6f94a4491e43f35667947d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

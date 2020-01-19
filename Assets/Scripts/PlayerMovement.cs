@@ -9,8 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxspeed;
     public GameObject deathparticles;
     public bool alive = true;
-    public AudioSource goalSound;
-
+    public AudioSource playerdeathSound;
     private Vector3 playerspawn;
 
     int i = 1;
@@ -56,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.transform.tag == "Goal" && nxtLVL == true && alive == true)
         {
-            goalSound.Play();
             GameObject.Find("GameManager").GetComponent<GameManager>().CompleteLevel();
             nxtLVL = false;
         }
@@ -71,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
         while(alive)
         {
             alive = false;
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().ResetStars();
+            playerdeathSound.Play();
             Instantiate(deathparticles, transform.position, Quaternion.Euler(-90, 0, 0));
             Invoke("resetposition", 1f);
             GetComponent<Animation>().Play();
@@ -85,7 +85,6 @@ public class PlayerMovement : MonoBehaviour
 
     void resetposition()
     {
-        GameObject.Find("LevelManager").GetComponent<LevelManager>().ResetStars();
         transform.position = new Vector3(playerspawn.x, playerspawn.y + 0.45f, playerspawn.z);
         alive = true;
         i-= 1;

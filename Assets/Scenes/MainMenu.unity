@@ -1882,7 +1882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 810, y: 390}
+  m_AnchoredPosition: {x: -80, y: -80}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &322822454
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -4038,10 +4038,10 @@ RectTransform:
   m_Father: {fileID: 435220164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 8.185, y: 0}
+  m_SizeDelta: {x: -16.37, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &680380319
 GameObject:
@@ -9433,7 +9433,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -12242,7 +12242,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -14772,7 +14772,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5243978473975957240, guid: 89cbc214ae4346743824c28ebdd03cd8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 22b06bd7a89ab4602909fd0e950257e1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b45ce5c65c05b2143ab8f59c0bf0cb4a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -14888,15 +14888,21 @@ MonoBehaviour:
   MainMenuMusicSource: {fileID: 1832518138}
   IngamemusicSource: {fileID: 1832518152}
   MainMenuMusic:
-  - {fileID: 8300000, guid: 22b06bd7a89ab4602909fd0e950257e1, type: 3}
-  - {fileID: 8300000, guid: 47e9b301738b546e1a5275416037d825, type: 3}
-  - {fileID: 8300000, guid: c24fce21d39eb42ed9cb6ef45e2c0396, type: 3}
+  - {fileID: 8300000, guid: b45ce5c65c05b2143ab8f59c0bf0cb4a, type: 3}
+  - {fileID: 8300000, guid: 6fd3a577a2828d2439506a444c7bf7eb, type: 3}
+  - {fileID: 8300000, guid: b8428aa23b282b143a77c01f28f6fea0, type: 3}
+  - {fileID: 8300000, guid: 591d608422945874788bf511bf78fd88, type: 3}
+  - {fileID: 8300000, guid: 45cfa7b94ae0c8847a69dec2b20e6ff7, type: 3}
+  - {fileID: 8300000, guid: d01a4d0b7e8a98e46a74ea6c8b562db3, type: 3}
   Ingamemusic:
-  - {fileID: 8300000, guid: 079b16d65b3b04fe8aee9e756c46e985, type: 3}
-  - {fileID: 8300000, guid: 956ad2f73332544fd87365087825cc4f, type: 3}
-  - {fileID: 8300000, guid: 718fe8c6277184a01bed0b783b53802e, type: 3}
-  - {fileID: 8300000, guid: d8b719ef1c3254c97b2c5b785c2d5fd3, type: 3}
-  - {fileID: 8300000, guid: 8b8ab71ffffc24e5582de0192d9dcee8, type: 3}
+  - {fileID: 8300000, guid: 2b5dac4e3c810974792cbd34e527f13b, type: 3}
+  - {fileID: 8300000, guid: 90a9274d1b6b8a2479a755a74162eb81, type: 3}
+  - {fileID: 8300000, guid: baed40b3116d4674ca94979afe41b9de, type: 3}
+  - {fileID: 8300000, guid: 003153c6188672a4780c9f01be9898cb, type: 3}
+  - {fileID: 8300000, guid: b5a1714ba8c31f1488ea261ed094f6e0, type: 3}
+  - {fileID: 8300000, guid: 5bf1fc7d4bf802c48878c1730a0bab57, type: 3}
+  - {fileID: 8300000, guid: 3c4c7fc03046aa646aeb2a9869871abc, type: 3}
+  - {fileID: 8300000, guid: 926de0017e9197246b7b063d65bf0134, type: 3}
   - {fileID: 8300000, guid: 26364aaf1f64b40c1a047b0bacfbd10e, type: 3}
   - {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
   isIGMplaying: 0
@@ -15010,7 +15016,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4803539981159368459, guid: 89cbc214ae4346743824c28ebdd03cd8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 079b16d65b3b04fe8aee9e756c46e985, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2b5dac4e3c810974792cbd34e527f13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

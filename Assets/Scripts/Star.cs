@@ -8,7 +8,7 @@ public class Star : MonoBehaviour
     public AudioSource StarCollectedSound;
 
     public bool collected = false;
-    int i = 1;
+    public int i = 1;
 
     // Start is called before the first frame update
     void Start()

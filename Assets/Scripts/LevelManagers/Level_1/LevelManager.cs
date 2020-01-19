@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
         {
             levelStars = lvl1;
             stars[i].SetActive(state[i]);
+            stars[i].GetComponent<Star>().i = 1;
             stars[i].GetComponent<AnimationScript>().enabled = state[i];
             stars[i].GetComponent<Star>().collected = !state[i];
             sw[i].SetActive(state[i]);
