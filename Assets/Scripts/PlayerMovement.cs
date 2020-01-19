@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxspeed;
     public GameObject deathparticles;
     public bool alive = true;
+    public AudioSource goalSound;
 
     private Vector3 playerspawn;
 
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.transform.tag == "Goal" && nxtLVL == true && alive == true)
         {
+            goalSound.Play();
             GameObject.Find("GameManager").GetComponent<GameManager>().CompleteLevel();
             nxtLVL = false;
         }
