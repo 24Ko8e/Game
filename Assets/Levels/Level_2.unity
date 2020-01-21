@@ -50,7 +50,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -2062,7 +2062,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 9.51
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2098,7 +2098,7 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 56.2
+  m_ShadowAngle: 0
 --- !u!4 &811668772
 Transform:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ PrefabInstance:
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
@@ -4169,7 +4169,7 @@ PrefabInstance:
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
@@ -5077,7 +5077,7 @@ PrefabInstance:
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6007939378161945884, guid: 08d0fc7f48c663149bce67a5074be9bb,
         type: 3}
