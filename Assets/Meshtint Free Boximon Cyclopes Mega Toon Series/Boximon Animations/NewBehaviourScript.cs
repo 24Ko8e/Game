@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed;
 
     Animator animator;
+    public GameObject mainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,14 @@ public class NewBehaviourScript : MonoBehaviour
         }
         transform.position = Vector3.MoveTowards(transform.position, patrolpoints[CurrentPoint].position, speed * Time.deltaTime);
 
-      
+        if (transform.position == patrolpoints[5].position)
+        {
+            Invoke("menuDrop", 1f);
+        }
+    }
+
+    void menuDrop()
+    {
+        mainMenu.GetComponent<Animation>().PlayQueued("MainMenuIn", QueueMode.PlayNow);
     }
 }
