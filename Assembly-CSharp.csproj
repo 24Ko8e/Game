@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AudioCenter.cs" />
+    <Compile Include="Assets\Meshtint Free Boximon Cyclopes Mega Toon Series\Boximon Animations\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />

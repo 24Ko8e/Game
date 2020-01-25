@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static int currentlevel;
     public static int levelsunlocked;
 
+    public GameObject hud;
+
     public int totalStars = 0;
 
     void Awake()
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(GameObject.Find(gameObject.name));
         }
+        hud.SetActive(false);
+
         currentlevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         levelsunlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
         totalStars = PlayerPrefs.GetInt("TotalStars", 0);
@@ -44,5 +48,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
 
         SceneManager.LoadScene("LoadingScene");
+    }
+
+    public void showHUD()
+    {
+        hud.SetActive(true);
     }
 }

@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         LoadGame();
+        GameObject.Find("GameManager").GetComponent<GameManager>().showHUD();
         Debug.Log(levelStars + " levelStars");
     }
 

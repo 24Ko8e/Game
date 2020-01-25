@@ -27,7 +27,6 @@ public class Loading : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        //GameObject.Find("AudioManager").GetComponent<AudioManager>().InGameMusicStart();
     }
 
     // Update is called once per frame
