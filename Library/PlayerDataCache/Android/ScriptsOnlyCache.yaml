@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - LevelManager
     - LoadSelectedLevel
     - Loading
+    - NewBehaviourScript
     - PauseMenu
     - PlayerMovement
     - Star
@@ -21,6 +22,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -61,6 +68,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
@@ -92,11 +101,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10948}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11054}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11402}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -167,11 +176,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10948}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11054}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11402}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -220,9 +229,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 11050}
+      Script: {instanceID: 11052}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11402}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -244,11 +253,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
@@ -258,7 +277,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 109
       Script: {instanceID: 0}
@@ -297,28 +326,36 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10830}
     - Class: 114
-      Script: {instanceID: 11050}
+      Script: {instanceID: 10872}
     - Class: 114
-      Script: {instanceID: 11058}
+      Script: {instanceID: 11052}
     - Class: 114
-      Script: {instanceID: 11070}
+      Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11204}
+      Script: {instanceID: 11072}
     - Class: 114
-      Script: {instanceID: 11390}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11414}
+      Script: {instanceID: 11402}
     - Class: 114
-      Script: {instanceID: 11432}
+      Script: {instanceID: 11416}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11434}
+    - Class: 114
+      Script: {instanceID: 11446}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -333,6 +370,8 @@ ScriptsOnlyBuild:
     - Class: 243
       Script: {instanceID: 0}
     - Class: 245
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -685,6 +724,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 48c52f887d67390908c88757c2638654
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NewBehaviourScript
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -835,7 +880,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 97e96e96706723fc4a3543c0ff3a1135
+      Hash: 1f293b5a0d87d1effca91582b62f22e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
