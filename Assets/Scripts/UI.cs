@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
     public Animation Optionsin;
     public Animation AudioOptionsin;
     public Animation GraphicsIn;
+    public Animation LvlselectIn;
 
     public AudioMixer audiomixer;
 
@@ -38,7 +39,6 @@ public class UI : MonoBehaviour
 
         graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 2);
         fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
-
 
     }
 
@@ -69,6 +69,29 @@ public class UI : MonoBehaviour
     {
         Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
         yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);   
+        mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
+    }
+
+    public void LVLselect()
+    {
+        StartCoroutine(lvlselect());
+    }
+
+    IEnumerator lvlselect()
+    {
+        mainmenuout.PlayQueued("MainMenuOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(mainmenuout.GetClip("MainMenuOut").length);
+        LvlselectIn.PlayQueued("LevelMenuIn", QueueMode.PlayNow);
+    }
+    public void LVLselectBack()
+    {
+        StartCoroutine(lvlselect_back());
+    }
+
+    IEnumerator lvlselect_back()
+    {
+        LvlselectIn.PlayQueued("LevelMenuOut", QueueMode.PlayNow);
+        yield return new WaitForSeconds(LvlselectIn.GetClip("LevelMenuOut").length);
         mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
     }
 
