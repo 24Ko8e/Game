@@ -68,6 +68,7 @@
     <Compile Include="Assets\Makaka Games\Mobile Game Icon Pack\Scripts\SampleControl.cs" />
     <Compile Include="Assets\Meshtint Free Boximon Cyclopes Mega Toon Series\Boximon Animations\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\Scripts\AnimationSpeedController.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\DestroyParticle.cs" />

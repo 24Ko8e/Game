@@ -32,7 +32,6 @@ public class UI : MonoBehaviour
     public float soundVolume;
     private void Start()
     {
-
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);

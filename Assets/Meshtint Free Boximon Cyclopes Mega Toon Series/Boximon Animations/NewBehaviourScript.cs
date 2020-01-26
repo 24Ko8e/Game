@@ -40,12 +40,13 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (transform.position == patrolpoints[5].position)
         {
-            Invoke("menuDrop", 1f);
+            StartCoroutine(menuDrop());
         }
     }
 
-    void menuDrop()
+    IEnumerator menuDrop()
     {
+        yield return new WaitForSeconds(1f);
         mainMenu.GetComponent<Animation>().PlayQueued("MainMenuIn", QueueMode.PlayNow);
     }
 }
