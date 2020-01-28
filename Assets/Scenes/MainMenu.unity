@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.8962264, g: 0.88354397, b: 0.88354397, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.00035
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_BakeResolution: 60
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -11621,7 +11621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 26.7, y: -0.000097904034}
+  m_AnchoredPosition: {x: 26.7, y: -0.00034999987}
   m_SizeDelta: {x: -26.7, y: 750}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &718891126
@@ -23782,7 +23782,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -23834,7 +23834,7 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 0
+    fastMode: 1
     keepAlpha: 0
   fog:
     enabled: 1
@@ -23904,7 +23904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 800.00006}
+  m_AnchoredPosition: {x: 0, y: 799.99994}
   m_SizeDelta: {x: 0, y: 1740}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &900001407
@@ -38644,8 +38644,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644941378}
   m_HandleRect: {fileID: 1644941376}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.99994695
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -62652,7 +62652,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391905493}
   m_HandleRect: {fileID: 391905492}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 0.00000022888183
   m_Size: 0.54022986
   m_NumberOfSteps: 0
   m_OnValueChanged:

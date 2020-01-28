@@ -19,7 +19,6 @@ ScriptsOnlyBuild:
     - UI
     - waterfall
     Unity.Postprocessing.Runtime.dll:
-    - UnityEngine.Rendering.PostProcessing.MotionBlur
     - UnityEngine.Rendering.PostProcessing.PostProcessLayer
     - UnityEngine.Rendering.PostProcessing.PostProcessProfile
     - UnityEngine.Rendering.PostProcessing.PostProcessResources
@@ -305,8 +304,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9804}
     - Class: 114
       Script: {instanceID: 9834}
-    - Class: 114
-      Script: {instanceID: 10026}
     - Class: 114
       Script: {instanceID: 10134}
     - Class: 114
