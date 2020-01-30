@@ -20,7 +20,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadAsyncLevel()
     {
-        AsyncOperation loadlevel = SceneManager.LoadSceneAsync(GameManager.currentlevel);
+        AsyncOperation loadlevel = SceneManager.LoadSceneAsync(GameObject.Find("GameManager").GetComponent<GameManager>().currentlevel);
 
         while (!loadlevel.isDone)
         {

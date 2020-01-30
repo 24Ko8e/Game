@@ -5,7 +5,7 @@ public class FPScounter : MonoBehaviour
 {
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     public Text _fpsText;
     public float _hudRefreshRate = 1f;

@@ -69,8 +69,6 @@ public class AudioManager : MonoBehaviour
             MainMenuMusicSource.clip = MainMenuMusic[i];
             MainMenuMusicSource.Play();
 
-            Debug.Log(MainMenuMusicSource.clip.name);
-
             while (MainMenuMusicSource.isPlaying)
             {
                 yield return null;
@@ -138,8 +136,6 @@ public class AudioManager : MonoBehaviour
         {
             IngamemusicSource.clip = Ingamemusic[i];
             IngamemusicSource.Play();
-
-            Debug.Log(IngamemusicSource.clip.name);
 
             while (IngamemusicSource.isPlaying)
             {

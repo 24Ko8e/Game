@@ -22,25 +22,29 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position == patrolpoints[4].position)
+        if (CurrentPoint <= 5)
         {
-            animator.SetBool("StoneJump", true);
-        }
+            if (transform.position == patrolpoints[4].position)
+            {
+                animator.SetBool("StoneJump", true);
+            }
 
-        if (transform.position == patrolpoints[CurrentPoint].position)
-        {
-            CurrentPoint++;
-        }
-
-        if (CurrentPoint <= 4) 
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(patrolpoints[CurrentPoint].position - transform.position), 10 * Time.deltaTime);
-        }
-        transform.position = Vector3.MoveTowards(transform.position, patrolpoints[CurrentPoint].position, speed * Time.deltaTime);
-
-        if (transform.position == patrolpoints[5].position)
-        {
-            StartCoroutine(menuDrop());
+            if (transform.position == patrolpoints[CurrentPoint].position)
+            {
+                CurrentPoint++;
+            }
+            if (CurrentPoint <= 4)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(patrolpoints[CurrentPoint].position - transform.position), 10 * Time.deltaTime);
+            }
+            if (CurrentPoint <= 5)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, patrolpoints[CurrentPoint].position, speed * Time.deltaTime);
+            }
+            if (transform.position == patrolpoints[5].position)
+            {
+                StartCoroutine(menuDrop());
+            }
         }
     }
 

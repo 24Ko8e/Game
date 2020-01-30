@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currentlevel;
-    public static int levelsunlocked;
+    public int currentlevel;
+    public int levelsunlocked;
 
     public GameObject hud;
 
@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         levelsunlocked = PlayerPrefs.GetInt("LevelsUnlocked", 1);
         totalStars = PlayerPrefs.GetInt("TotalStars", 0);
         Debug.Log(totalStars + "stars");
+        Debug.Log(currentlevel);
+        Debug.Log(levelsunlocked);
     }
 
     public void CompleteLevel()

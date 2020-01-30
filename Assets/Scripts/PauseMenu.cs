@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Animation pauseMenuIn;
+
+
     public static bool isPaused = false;
     public GameObject audioManager;
 
@@ -30,8 +33,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        audioManager.GetComponent<AudioManager>().Paused();
         PauseMenuUI.SetActive(true);
+        pauseMenuIn.PlayQueued("PauseIn", QueueMode.PlayNow);
+        audioManager.GetComponent<AudioManager>().Paused();
         Time.timeScale = 0f;
         isPaused = true;
     }

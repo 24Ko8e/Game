@@ -19,14 +19,20 @@ public class LoadSelectedLevel : MonoBehaviour
 
     public void LoadLevel(int lvl)
     {
-        if (lvl <= GameManager.levelsunlocked)
+        if (lvl <= GameObject.Find("GameManager").GetComponent<GameManager>().levelsunlocked)
         {
-            GameManager.currentlevel = lvl;
-            PlayerPrefs.SetInt("CurrentLevel", GameManager.currentlevel);
-        }
+            GameObject.Find("GameManager").GetComponent<GameManager>().currentlevel = lvl;
+            PlayerPrefs.SetInt("CurrentLevel", GameObject.Find("GameManager").GetComponent<GameManager>().currentlevel);
+            PlayerPrefs.Save();
+
             GameObject.Find("AudioManager").GetComponent<AudioManager>().game = true;
             GameObject.Find("AudioManager").GetComponent<AudioManager>().menu = false;
             GameObject.Find("AudioManager").GetComponent<AudioManager>().menuFadeOut();
             SceneManager.LoadScene("LoadingScene");
+        }
+        else
+        {
+            Debug.Log("level locked");
+        }
     }
 }
