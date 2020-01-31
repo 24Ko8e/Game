@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Assets\waterfall.cs" />
     <Compile Include="Assets\AudioCenter.cs" />
     <Compile Include="Assets\Makaka Games\Mobile Game Icon Pack\Scripts\SampleControl.cs" />
     <Compile Include="Assets\Meshtint Free Boximon Cyclopes Mega Toon Series\Boximon Animations\NewBehaviourScript.cs" />
