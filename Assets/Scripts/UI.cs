@@ -63,6 +63,11 @@ public class UI : MonoBehaviour
     public void OptionsBack()
     {
         StartCoroutine(opsback());
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("GameMusicVolume", gameMusicVolume);
+        PlayerPrefs.SetFloat("SoundVolume", soundVolume);
+
+        PlayerPrefs.Save();
     }
     IEnumerator opsback()
     {
@@ -92,51 +97,6 @@ public class UI : MonoBehaviour
         LvlselectIn.PlayQueued("LevelMenuOut", QueueMode.PlayNow);
         yield return new WaitForSeconds(LvlselectIn.GetClip("LevelMenuOut").length);
         mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
-    }
-
-    public void OnAudioClick()
-    {
-        StartCoroutine(Audio());
-    }
-
-    IEnumerator Audio()
-    {
-        Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
-        yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);
-        AudioOptionsin.PlayQueued("AudioOptionsIn", QueueMode.PlayNow);
-    }
-    public void AudioBack()
-    {
-        StartCoroutine(AudioBackClick());
-    }
-
-    IEnumerator AudioBackClick()
-    {
-        AudioOptionsin.PlayQueued("AudioOptionsOut", QueueMode.PlayNow);
-        yield return new WaitForSeconds(AudioOptionsin.GetClip("AudioOptionsOut").length);
-        Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
-    }
-
-    public void OnGraphicsClick()
-    {
-        StartCoroutine(graphicsclick());
-    }
-    IEnumerator graphicsclick()
-    {
-        Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
-        yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);
-        GraphicsIn.PlayQueued("GraphicsIn", QueueMode.PlayNow);
-    }
-
-    public void OnGraphicsBack()
-    {
-        StartCoroutine(graphics_back());
-    }
-    IEnumerator graphics_back()
-    {
-        GraphicsIn.PlayQueued("GraphicsOut", QueueMode.PlayNow);
-        yield return new WaitForSeconds(GraphicsIn.GetClip("GraphicsOut").length);
-        Optionsin.PlayQueued("OptionsIn", QueueMode.PlayNow);
     }
 
     public void Quit()

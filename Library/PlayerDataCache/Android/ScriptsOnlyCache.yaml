@@ -1055,7 +1055,7 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
-      Hash: bfe5085414496d2b9d69d05da30d6823
+      Hash: d9506818bef181237c57018deafab184
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
