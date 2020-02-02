@@ -71,6 +71,14 @@ public class UI : MonoBehaviour
     }
     IEnumerator opsback()
     {
+
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("GameMusicVolume", gameMusicVolume);
+        PlayerPrefs.SetFloat("SoundVolume", soundVolume);
+
+        PlayerPrefs.Save();
+
+
         Optionsin.PlayQueued("OptionsOut", QueueMode.PlayNow);
         yield return new WaitForSeconds(Optionsin.GetClip("OptionsOut").length);   
         mainmenuout.PlayQueued("MainMenuIn", QueueMode.PlayNow);
@@ -102,7 +110,6 @@ public class UI : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        Debug.Log("Quit");
     }
 
     public void setVolumeM(float volume)
@@ -127,14 +134,14 @@ public class UI : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(index);
         PlayerPrefs.SetInt("GraphicsSettings", index);
-        //PlayerPrefs.Save();
+        PlayerPrefs.Save();
     }
 
     public void FPScounterToggle(bool state)
     {
         fpstxt.SetActive(state);
         PlayerPrefs.SetInt("fpscounter", Convert.ToInt32(state));
-        //PlayerPrefs.Save();
+        PlayerPrefs.Save();
     }
 
     private void OnDisable()
