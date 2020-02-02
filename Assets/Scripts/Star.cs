@@ -42,13 +42,16 @@ public class Star : MonoBehaviour
 
     IEnumerator OnCollected()
     {
+        collected = true;
         sw.GetComponent<Animation>().Play();
-        while (sw.GetComponent<Animation>().isPlaying)
+        while (sw.GetComponent<Animation>().isPlaying && collected)
         {
             yield return null;
         }
-        collected = true;
-        gameObject.SetActive(false);
-        sw.SetActive(false);
+        if (collected)
+        {
+            gameObject.SetActive(false);
+            sw.SetActive(false);
+        }
     }
 }
