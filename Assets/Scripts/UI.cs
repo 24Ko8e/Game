@@ -5,6 +5,8 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.Rendering.LWRP;
+using UnityEngine.Rendering;
 
 public class UI : MonoBehaviour
 {
@@ -27,11 +29,28 @@ public class UI : MonoBehaviour
 
     public GameObject fpstxt;
 
-    public float musicVolume;
-    public float gameMusicVolume;
-    public float soundVolume;
+    public float musicVolume = 1;
+    public float gameMusicVolume = 1;
+    public float soundVolume = 1;
+
+    public RenderPipelineAsset LowQualityAsset;
+    public RenderPipelineAsset MediumQualityAsset;
+    public RenderPipelineAsset HighQualityAsset;
+
     private void Start()
     {
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
+        gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
+        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
+
+        graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 2);
+        fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
+
+    }
+
+    public void setValues()
+    {
+
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         gameMusicSlider.value = PlayerPrefs.GetFloat("GameMusicVolume", 1);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 1);
@@ -133,6 +152,21 @@ public class UI : MonoBehaviour
     public void setQuality(int index)
     {
         QualitySettings.SetQualityLevel(index);
+        switch (index)
+        {
+            case 0:
+                GraphicsSettings.renderPipelineAsset = LowQualityAsset;
+                break;
+
+            case 1:
+                GraphicsSettings.renderPipelineAsset = MediumQualityAsset;
+                break;
+
+            case 2:
+                GraphicsSettings.renderPipelineAsset = HighQualityAsset;
+                break;
+        }
+
         PlayerPrefs.SetInt("GraphicsSettings", index);
         PlayerPrefs.Save();
     }

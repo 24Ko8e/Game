@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 9f36dc687d33be743917d0a023d8b23e,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13842,6 +13842,9 @@ MonoBehaviour:
   musicVolume: 0
   gameMusicVolume: 0
   soundVolume: 0
+  LowQualityAsset: {fileID: 11400000, guid: 9373e6f225b5af94d9357059ba7e3d93, type: 2}
+  MediumQualityAsset: {fileID: 11400000, guid: f5b91a552038cf94d9f1a0c4fb07ba00, type: 2}
+  HighQualityAsset: {fileID: 11400000, guid: edee731c5120fae4b80ad9b9b9e509c6, type: 2}
 --- !u!1 &1198736354
 GameObject:
   m_ObjectHideFlags: 0
@@ -15783,9 +15786,12 @@ MonoBehaviour:
   graphics: {fileID: 1338778328}
   fpstoggle: {fileID: 1201790878}
   fpstxt: {fileID: 1198736354}
-  musicVolume: 0
-  gameMusicVolume: 0
-  soundVolume: 0
+  musicVolume: 1
+  gameMusicVolume: 1
+  soundVolume: 1
+  LowQualityAsset: {fileID: 11400000, guid: 9373e6f225b5af94d9357059ba7e3d93, type: 2}
+  MediumQualityAsset: {fileID: 11400000, guid: f5b91a552038cf94d9f1a0c4fb07ba00, type: 2}
+  HighQualityAsset: {fileID: 11400000, guid: edee731c5120fae4b80ad9b9b9e509c6, type: 2}
 --- !u!111 &1351585936
 Animation:
   m_ObjectHideFlags: 0
