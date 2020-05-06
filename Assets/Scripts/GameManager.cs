@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public int currentlevel;
     public int levelsunlocked;
+    public int ControlsPref;
 
     public GameObject hud;
 

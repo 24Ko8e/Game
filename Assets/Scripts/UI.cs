@@ -37,6 +37,8 @@ public class UI : MonoBehaviour
     public RenderPipelineAsset MediumQualityAsset;
     public RenderPipelineAsset HighQualityAsset;
 
+    int controls;
+
     private void Start()
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
@@ -46,6 +48,7 @@ public class UI : MonoBehaviour
         graphics.value = PlayerPrefs.GetInt("GraphicsSettings", 2);
         fpstoggle.isOn = PlayerPrefs.GetInt("fpscounter", 0) == 1 ? true : false;
 
+        controls = PlayerPrefs.GetInt("Controls", 1);
     }
 
     public void setValues()
@@ -175,6 +178,13 @@ public class UI : MonoBehaviour
     {
         fpstxt.SetActive(state);
         PlayerPrefs.SetInt("fpscounter", Convert.ToInt32(state));
+        PlayerPrefs.Save();
+    }
+
+    public void setControls(int c)
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().ControlsPref = c;
+        PlayerPrefs.SetInt("Controls", c);
         PlayerPrefs.Save();
     }
 

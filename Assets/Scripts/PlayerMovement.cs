@@ -11,6 +11,14 @@ public class PlayerMovement : MonoBehaviour
     public bool alive = true;
     public AudioSource playerdeathSound;
     private Vector3 playerspawn;
+    bool touch = false;
+
+    Vector3 pointA;
+    Vector3 pointB;
+    public Transform innerCircle;
+    public Transform outerCircle;
+
+    int ControlsPref = 1;
 
     int i = 1;
     bool nxtLVL = true;
@@ -20,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Input.gyro.enabled = true;
         playerspawn = transform.position;
+        ControlsPref = GameObject.Find("Gamemanager").GetComponent<GameManager>().ControlsPref;
     }
 
     // Update is called once per frame
@@ -28,8 +37,16 @@ public class PlayerMovement : MonoBehaviour
         if (alive && transform.position.y < 0.28f)
         {
             //transform.Translate(Input.acceleration.x, 0, Input.acceleration.y);
-            rb.AddForce(Input.GetAxisRaw("Horizontal") * force * Time.deltaTime, 0, Input.GetAxisRaw("Vertical") * force * Time.deltaTime);  // This is only for debugging purposes. Remove this during final build. 
+            //rb.AddForce(Input.GetAxisRaw("Horizontal") * force * Time.deltaTime, 0, Input.GetAxisRaw("Vertical") * force * Time.deltaTime);  // This is only for debugging purposes. Remove this during final build. 
+        if (ControlsPref == 1)
+        {
             rb.AddForce(Input.acceleration.x * force * Time.deltaTime, 0, Input.acceleration.y * force * Time.deltaTime);  // Remove the comment for final build.
+        }
+        if(ControlsPref == 2) { 
+            
+                //code for d-pad
+
+        }
         }
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxspeed);
 
