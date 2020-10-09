@@ -1,3 +1,3 @@
 # Maze-Game
-Aim is to collect stars and reach the goal to get to the next level all while avoiding enemies and traps
+Aim is to collect stars and reach the goal to get to the next level all while avoiding enemies and traps. This game uses gyroscope to control the player.
 Made on Unity
